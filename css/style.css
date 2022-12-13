@@ -5,30 +5,115 @@
 }
 body{
     background-color: var(--body-bg);
+    background-image: url(../img/bg1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 :root{
     --calc-btn-bg: #728f23;
     --reset-btn-bg: #d73939;
-    --body-bg: #1e2f22;
+    --body-bg: #1e221f;
+    --white-color: #FFF;
+}
+/* error */
+.emoji-error{
+    font-size: 280px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    display: none;
+}
+/* -----------------------header----------- */
+.header{
+    margin-top: 15px;
+}
+.lang-btn{
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background-color: cornflowerblue;
+    color: #FFF;
+    font-size: 1.3rem;
+    margin: 0 30px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.header .lang-btn:hover{
+    opacity: 0.7;
+    transition: 0.3s;
+}
+.header h1{
+    color: var(--white-color);
+    text-transform: capitalize;
+    text-align: center;
+}
+/* -----------------------label------------ */
+.label{
+    color: white;
+    width: 70%;
+    margin: 0 auto;
+    /* margin-top: 50px; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+}
+.label h3{
+    /* color: white; */
+    font-size: 1.5rem;
+    width: fit-content;
+    text-transform: capitalize;
+    margin-left: 40px;
+    margin-bottom: 5px;
 }
 /* ---------------Start-Form----------------- */
 form{
     text-align: center;
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
-    margin-top: 100px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
-.age_input{
+input{
     padding: 10px 5px;
-    width: 60%;
+    width: 33%;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    outline: none;
+    font-weight: bold;
+    background-color: transparent;
+    box-shadow: 0px 0px 7px 0px white;
+    color: var(--white-color);
+}
+.day:focus{
+    background-color: #36858538;
+}
+.year:focus{
+    background-color: #36858538;
+}
+select{
+    padding: 10px 5px;
+    width: 30%;
     border: none;
     border-radius: 3px;
     font-size: 1.3rem;
     outline: none;
+    font-weight: bold;
+    background-color: transparent;
+    box-shadow: 0px 0px 7px 0px white;
+    color: var(--white-color);
+    cursor: pointer;
 }
-.calc{
+select option{
+    background-color: #368585;
+    font-size: 1.5rem;
+}
+.calc,.reset{
     width: 15%;
     cursor: pointer;
     border: none;
@@ -36,19 +121,17 @@ form{
     background-color: var(--calc-btn-bg);
     color: #FFF;
     font-size: 1.3rem;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: none;
 }
 .calc:hover{
     opacity: 0.7;
     transition: 0.3s;
 }
 .reset{
-    width: 15%;
-    cursor: pointer;
-    border: none;
-    border-radius: 3px;
     background-color: var(--reset-btn-bg);
-    color: #FFF;
-    font-size: 1.3rem;
 }
 .reset:hover{
     opacity: 0.7;
@@ -57,12 +140,14 @@ form{
 /* ---------------------End-Form----------------- */
 /* ---------------------Start-Container---------------- */
 .container{
-    border: 2px solid #00ffee27;
+    box-shadow: 0px 0px 20px 0px #183f3f;
+    background-color: #00000046;
     border-radius: 10px;
     width: 80%;
     margin: 0 auto;
-    margin-top: 50px;
-    /* text-align: center; */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 5px 0;
 }
 .container p{
     color: white;
@@ -75,7 +160,7 @@ form{
     width: fit-content;
 }
 .container p span{
-    color: #ebd649;
+    color: #00ffeeb1;
     font-size: 1.6rem;
 }
 /* --------------------End-Container------------------ */
@@ -89,18 +174,32 @@ form{
     color: #d73939;
     font-size: 2rem;
 }
+.error{
+    /* border: 2px solid red; */
+    box-shadow: 0px 0px 7px 0px red;
+}
+.label-error{
+    color: #e50303;
+}
 
 
 
 /* -----------Madia Queries---------- */
 @media (max-width: 450px){
     *{
-        font-size: 6px;
+        font-size: 5px;
+    }
+    .label h3{
+        margin-left: 0;
+        margin-right: 5px;
     }
 }
 
 @media (min-width: 451px) and (max-width: 767px){
     *{
-        font-size: 10px;
+        font-size: 7px;
+    }
+    .label h3{
+        margin-left: 0;
     }
 }

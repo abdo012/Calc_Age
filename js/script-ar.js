@@ -8,11 +8,11 @@ let label = document.querySelector(".label");
 let emoji_error = document.querySelector(".emoji-error");
 
 // select_day.onfocus = function(){
-
+  
 // }
 // After page load focus the input 
 window.onload = function () {
-    select_day.focus();
+  select_day.focus();
 };
 calc_btn.addEventListener("click", (e)=>{
     e.preventDefault();
@@ -24,10 +24,10 @@ reset_click();
 
 //----------- Cheak Data From User
 function cheak() {
-    let Year_cheak = new Date();
+  let Year_cheak = new Date();
   // Cheak All Input is Empty Or Not
     if(select_day.value === "" && select_month.value === "" && select_year.value === ""){
-        container.innerHTML = `<p id="mseeg">Pleas Enter Data...😒</p>`;
+        container.innerHTML = `<p id="mseeg">من فضلك ادخل البيانات...😒</p>`;
         select_day.classList.add("error");
         select_month.classList.add("error");
         select_year.classList.add("error");
@@ -37,44 +37,44 @@ function cheak() {
     }
     // Cheak The Day Input
     else if(select_day.value === ""){
-        select_day.classList.add("error");
-        container.innerHTML = `<p id="mseeg">dont leave the field empty...😒</p>`;
-        emoji_error.style.display = "block";
-        EndError()
+      select_day.classList.add("error");
+      container.innerHTML = `<p id="mseeg">لا تترك حقل الادخال فارغ...😒</p>`;
+      emoji_error.style.display = "block";
+      EndError()
     }else if(select_day.value < 1 || select_day.value > 31){
-        select_day.classList.add("error")
-        container.innerHTML = `<p id="mseeg">Pleas Enter A real Data...😒</p>`;
-        emoji_error.style.display = "block";
-        EndError()
-}
+      select_day.classList.add("error")
+      container.innerHTML = `<p id="mseeg"> من فضلك ادخل بيانات حقيقيه...😒</p>`;
+      emoji_error.style.display = "block";
+      EndError()
+  }
     // Cheak The Month Input
     else if(select_month.value === ""){
-        select_month.classList.add("error");
-        container.innerHTML = `<p id="mseeg">dont leave the field empty...😒</p>`;
-        emoji_error.style.display = "block";
-        EndError()
+      select_month.classList.add("error");
+      container.innerHTML = `<p id="mseeg">لا تترك حقل الادخال فارغ...😒</p>`;
+      emoji_error.style.display = "block";
+      EndError()
     }
     // Cheak The Year Input
     else if(select_year.value === ""){
-        select_year.classList.add("error");
-        container.innerHTML = `<p id="mseeg">dont leave the field empty...😒</p>`;
-        emoji_error.style.display = "block";
-        EndError()
+      select_year.classList.add("error");
+      container.innerHTML = `<p id="mseeg">لا تترك حقل الادخال فارغ...😒</p>`;
+      emoji_error.style.display = "block";
+      EndError()
     }
     else if(select_year.value < 1970){
         select_year.classList.add("error")
-        container.innerHTML = `<p id="mseeg">enter a year greater than 1970...😒</p>`;
+        container.innerHTML = `<p id="mseeg">ادخل سنه اكبر من  1970...😒</p>`;
         emoji_error.style.display = "block";
         EndError()
     }else if(select_year.value > Year_cheak.getFullYear()){
-        select_year.classList.add("error")
-        container.innerHTML = `<p id="mseeg">this year has not come yet...😒</p>`;
-        emoji_error.style.display = "block";
-        EndError()
+      select_year.classList.add("error")
+      container.innerHTML = `<p id="mseeg">هذه السنه لم تاتي بعد...😒</p>`;
+      emoji_error.style.display = "block";
+      EndError()
     }
     else {
     EndResult();
-    };
+  };
 };
 function EndResult(){
     let data_from_user = `"${select_month.value} ${select_day.value} , ${select_year.value}" `;
@@ -94,12 +94,12 @@ function EndResult(){
     let age_in_minuts = difference / 1000 / 60 ;
     let age_in_second = difference / 1000;
     let fainal_resulrt = `
-    <p>your age is : <span>${Math.trunc(age)} year and ${Math.trunc(month_reset)} month and a few days &#128519</span>  </p>
-    <p>your birthDay after : <span>${Math.trunc(12 - month_reset)} month and a few days &#128519</span>  </p>
-    <p>your age in day's is : <span>${Math.trunc(age_in_day)} Day &#128518</span> </p>
-    <p>your age in hour's is : <span>${Math.trunc(age_in_hours)} hour 😌</span> </p>
-    <p>your age in minute's is : <span>${Math.trunc(age_in_minuts)} minute 😐</span> </p>
-    <p>your age in second's is : <span>${Math.trunc(age_in_second)} second 😑</span> </p>
+    <p>عمرك هو : <span>${Math.trunc(age)} سنه و ${Math.trunc(month_reset)} شهور وبضعه ايام &#128519</span>  </p>
+    <p>باقي علي عيد ميلادك القادم : <span>${Math.trunc(12 - month_reset)} شهر وبضعه ايام &#128519</span>  </p>
+    <p>عمرك بالايام هو : <span>${Math.trunc(age_in_day)} يوم &#128518</span> </p>
+    <p>عمرك بالساعات هو : <span>${Math.trunc(age_in_hours)} ساعه 😌</span> </p>
+    <p>عمرك بالدقائق هو : <span>${Math.trunc(age_in_minuts)} دقيقه 😐</span> </p>
+    <p>عمرك بالثواني هو : <span>${Math.trunc(age_in_second)} ثانيه 😑</span> </p>
     `;
     container.innerHTML = fainal_resulrt;
 }
@@ -109,19 +109,21 @@ function EndResult(){
 // ---------------Reset_Button_function--------------
 function reset_click() {
     reset_btn.addEventListener("click", () => {
-    container.innerHTML = `
-                <p>your age is : <span></span>  </p>
-                <p>your birthDay after : <span></span>  </p>
-                <p>your age in day's is : <span></span> </p>
-                <p>your age in hour's is : <span></span> </p>
-                <p>your age in minute's is : <span></span> </p>
-                <p>your age in second's is : <span></span> </p>
-        `;
+      container.innerHTML = `
+          
+      <p>عمرك هو : <span></span>  </p>
+      <p>باقي علي عيد ميلادك القادم: <span></span>  </p>
+      <p>عمرك بالايام هو : <span></span> </p>
+      <p>عمرك بالساعات هو: <span></span> </p>
+      <p>عمرك بالدقائق هو : <span></span> </p>
+      <p>عمرك بالثواني هو : <span></span> </p>
+          
+          `;
     });
-};
-
-// ----------End The Eror In 1 Second------------
-function EndError(){
+  };
+  
+// ----------End The Error In 1 Second------------
+  function EndError(){
     setTimeout(()=>{
         select_day.classList.remove("error");
         select_month.classList.remove("error");
@@ -129,4 +131,4 @@ function EndError(){
         label.classList.remove("label-error");
         emoji_error.style.display = "none";
     },700)
-}
+  }

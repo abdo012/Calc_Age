@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="test the SEO">
+    <!-- Normlize CSS File -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Main Style File -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fav Icon -->
+    <link rel="icon" href="img/fav_icon.jpg" />
+    <!-- Title -->
+    <title>احسب عمرك</title>
+    <style>
+        body{
+            direction: rtl;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <a href="index.html" class="lang-btn">english</a>
+        <h1>اكتب تاريخ ميلادك</h1>
+    </div>
+    
+    <!-- Label -->
+    <div class="label">
+        <h3>اكتب اليوم</h3>
+        <h3>اكتب الشهر</h3>
+        <h3>اكتب السنه</h3>
+    </div>
+    <!-- Form -->
+    <form>
+        <!-- Day Input -->
+        <input type="number" max="31" min="1" class="day" placeholder="اليوم 1 : 31">
+        <!-- Select Month -->
+    <select name="Month" id="month">
+        <option value="">اختر الشهر</option>
+        <option value="Jan">يناير (1)</option>
+        <option value="Feb">فبراير (2)</option>
+        <option value="Mar">مارس (3)</option>
+        <option value="Apr">ابريل (4)</option>
+        <option value="May">مايو (5)</option>
+        <option value="Jun">يونيو (6)</option>
+        <option value="Jul">يوليو (7)</option>
+        <option value="Aug">اغسطس (8)</option>
+        <option value="Sep">سبتمبر (9)</option>
+        <option value="Oct">اكتوبر (10)</option>
+        <option value="Nov">نوفمبر (11)</option>
+        <option value="Dec">ديسمبر (12)</option>
+    </select>
+    <!-- Year Input -->
+    <input type="number" class="year" min="1970" placeholder="السنه 1970">
+    <input type="submit" class="calc" value="احسب 😎">
+    <input type="reset" class="reset" value="حذف 😏">
+    </form>
+    <!-- content container  -->
+    <div class="container">
+        <p>عمرك هو : <span></span>  </p>
+        <p>باقي علي عيد ميلادك القادم: <span></span>  </p>
+        <p>عمرك بالايام هو : <span></span> </p>
+        <p>عمرك بالساعات هو: <span></span> </p>
+        <p>عمرك بالدقائق هو : <span></span> </p>
+        <p>عمرك بالثواني هو : <span></span> </p>
+    </div>
+    <!-- error -->
+    <div class="emoji-error">
+        😖
+    </div>
+    <!-- Script JS File -->
+    <script src="js/script-ar.js"></script>
+</body>
+</html>
