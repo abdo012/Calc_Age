@@ -185,6 +185,12 @@ select option{
 
 
 /* -----------Madia Queries---------- */
+@media (max-width: 530px) {
+    .emoji-error{
+        font-size: 150px;
+        width: 80%;
+    }
+}
 @media (max-width: 450px){
     *{
         font-size: 5px;
